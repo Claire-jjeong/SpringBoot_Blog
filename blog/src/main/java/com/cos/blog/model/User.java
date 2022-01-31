@@ -20,7 +20,7 @@ public class User {
 	
 	@Column(nullable=false, length=30)
 	private String username; //아이디
-	
+	 
 	@Column(nullable=false, length=100) //암호화 된 비밀번호를 넣을 것이기 때문에 넉넉하게 !
 	private String password;
 	
