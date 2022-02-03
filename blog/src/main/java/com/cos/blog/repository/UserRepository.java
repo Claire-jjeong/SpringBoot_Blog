@@ -8,5 +8,6 @@ import com.cos.blog.model.User;
 //자동으로 bean등록이 된다
 //@Repository 생략 가능 
 public interface UserRepository extends JpaRepository<User,Integer>{
+//해당 jpa레파지토리는 유저테이블이 관리, user tbl의 pk는 Integer
 
 }
