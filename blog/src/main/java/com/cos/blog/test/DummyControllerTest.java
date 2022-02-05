@@ -10,6 +10,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +30,18 @@ public class DummyControllerTest {
 	//save함수는 id를 전달하지 않으면 insert를 해주고
 	//save 함수는 id를 전달하면 해당 id에 대한 데이터가 있으면 update를 해주고
 	//save 함수는 id를 전달하고 해당 id에 대한 데이더가 없으면 insert를 함 
+	@DeleteMapping("dummy/user/{id}")
+	public String delete(@PathVariable int id) {
+		try {
+			userRepository.deleteById(id);
+			
+		} catch(Exception e) {
+			return "삭제에 실패하였습니다. 해당 id는 DB에 없습니다.";
+		}
+		
+		return "삭제되었습니다. id : " + id;
+	}
+	
 	//email,password 수정 
 	@Transactional
 	@PutMapping("/dummy/user/{id}")						//json데이터 받아오기(requestBody)
@@ -46,7 +59,7 @@ public class DummyControllerTest {
 		//userRepository.save(user); 
 		//Transactional 넣어주고 save를 하지 않았는데 업데이트 됨->
 		//더티 체킹 
-		return null;
+		return user;
 	}
 	
 	@GetMapping("/dummy/users")
