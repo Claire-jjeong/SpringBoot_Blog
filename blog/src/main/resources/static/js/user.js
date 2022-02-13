@@ -1,5 +1,5 @@
 let index = {
-	let _this = this;
+	let  _this = this;
 	init:function(){
 		//JQuery
 		$("#btn-save").on("click", function(){  //this를 바인딩 하기 위해서 사용
