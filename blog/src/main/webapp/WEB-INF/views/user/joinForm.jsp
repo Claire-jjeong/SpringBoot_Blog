@@ -25,7 +25,7 @@
 
 </div>
 
-<script src = "/blog/js/user.js"></script>
+<script src = "/blog/js/user.js"></script> <!-- user.js파일 참조하겠다!  -->
 <%@ include file="../layout/footer.jsp"%>
 
 
