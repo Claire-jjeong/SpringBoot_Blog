@@ -23,8 +23,8 @@ public class UserApiController {
 		System.out.println("UserApiController : save 호출 됨 ");
 		//실제로 DB에 insert를 하고 아래에서 return이 되면 됨.
 		user.setRole(RoleType.USER);
-		userService.회원가입(user);
-		return new ResponseDto<Integer>(HttpStatus.OK,1); //200 : 정상으로 수행 됐다 
+		int result = userService.회원가입(user);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(),result); //200 : 정상으로 수행 됐다 
 		//java Object를 JSON으로 변환해서 리턴 (Jackson)
 	}
 }
