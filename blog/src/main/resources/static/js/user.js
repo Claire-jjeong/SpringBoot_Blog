@@ -2,7 +2,7 @@
 
 let index = {
 	init: function(){
-		$("#btn-save").on("click", ()=>{
+		$("#btn-save").on("click", ()=>{ //this 바인딩 하기 위해 화살표 함수 사용 
 			this.save(); //this : 자기 자신의 값, 오버로딩 된 다른 생성자 호출 
 		});
 	}, //버튼 누르면!
@@ -22,7 +22,7 @@ let index = {
 			//회원가입 수행 요청 
 			type : "POST",
 			url: "/blog/api/user",
-			data: JSON.stringify(data),
+			data: JSON.stringify(data), //stringify : data를 json화 시켜줌 
 			contentType:"application/json; charset=utf-8" //body 데이터가 어떤 타입인지 
 			//dataType: "json" //응답이 왔을 때 문자열 (생긴게 json이라면) => javascript 
 		}).done(function(resp){
